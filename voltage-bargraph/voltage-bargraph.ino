@@ -16,10 +16,28 @@ void setup() {
 }
 
 void loop() {
-  if (digitalRead(8) == LOW) {
-    Serial.println("Button pressed.");
+  analogWrite(red, 0);
+  analogWrite(green, 0);
+  analogWrite(blue, 0);
+
+  if (digitalRead(8) == 0) {
     int value = analogRead(5);
-    Serial.println(value);
-    delay(100);
+    double voltage = value/204.6;
+    Serial.println(voltage);
+    delay(10);
+    if (voltage > 1 && voltage < 2) {
+        analogWrite(blue, 255);
+        Serial.println("blue");
+    } else if (voltage >= 2 && voltage < 4) {
+        analogWrite(green, 255);
+      Serial.println("green");
+    } else if (voltage >= 4) {
+        analogWrite(red, 255);
+        Serial.println("red");
+    } else {
+      analogWrite(red, 0);
+      analogWrite(green, 0);
+      analogWrite(blue, 0);
+    }
   }
 }
