@@ -7,8 +7,7 @@ void loop() {
   if (digitalRead(8) == LOW) {
     Serial.println("Button pressed.");
     int value = analogRead(5);
-    Serial.println("Value: " + value);
+    Serial.println(value);
     delay(100);
   }
-
 }
