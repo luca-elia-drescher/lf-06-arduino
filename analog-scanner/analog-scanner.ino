@@ -8,6 +8,8 @@ void loop() {
     Serial.println("Button pressed.");
     int value = analogRead(5);
     Serial.println(value);
+    double voltage = value/204.6;
+    Serial.println(value);
     delay(100);
   }
 }
