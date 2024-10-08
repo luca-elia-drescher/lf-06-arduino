@@ -1,5 +1,5 @@
 char data;
-char led-status;
+char ledStatus;
 
 void setup() {
   Serial.begin(9600);
@@ -12,8 +12,8 @@ void loop() {
   }
 
   if (data == '1') {
-    digitalWrite(11, HIGH)
+    digitalWrite(11, HIGH);
   } else {
-    digitalWrite(11, LOW)
+    digitalWrite(11, LOW);
   }
 }
