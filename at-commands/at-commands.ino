@@ -5,6 +5,7 @@ SoftwareSerial softSerial(10, 11);
 void setup() {
   softSerial.begin(38400);
   Serial.begin(9600);
+  Serial.println("Device connected");
   delay(500);
 }
 
